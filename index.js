@@ -42,7 +42,7 @@ app.delete('/deletei/:id', async (req,res)=>{
 
 app.put('/update/:id', async (req,res) => {
 
-    const updated = Todo.findByIdAndUpdate(req.params.id,{text:req.body.text},{timestamps:req.body.timestamp});
+    const updated = await Todo.findByIdAndUpdate(req.params.id,{text:req.body.text});
 
     res.json(updated);
 
